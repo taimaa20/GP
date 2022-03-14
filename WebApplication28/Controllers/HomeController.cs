@@ -17,8 +17,32 @@ namespace WebApplication28.Controllers
         {
             return View();
         }
+        public IActionResult HomeIndex()
+        {
+            return View();
+        }
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
+        public IActionResult Porifilo()
+        {
+            return View();
+        }
 
+        public IActionResult Pricing()
+        {
+            return View();
+        }
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        public IActionResult Services()
         {
             return View();
         }
