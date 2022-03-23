@@ -11,9 +11,14 @@ namespace WebApplication28.Controllers
         {
             _context = context;
         }
-
+        HomeServicesNewContext db = new HomeServicesNewContext();
         public IActionResult Index()
+
         {
+
+
+            ViewBag.countOFEmployees = _context.Logins.Where(x => x.RoleId == 2).Count();
+            ViewBag.countOFUsers = _context.Users.Count();
             return View();
         }
     }

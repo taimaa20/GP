@@ -1,6 +1,13 @@
 ﻿
 @{
-    
+
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var countOFEmployees= ViewBag.countOFEmployees ;
+
+    var countOFUsers = ViewBag.countOFUsers; 
+
+
 }
-<h1>hello</h1>
+
+<h1>countOFEmployees=@countOFEmployees</h1>
+<h1>countOFUsers=@countOFUsers</h1>
