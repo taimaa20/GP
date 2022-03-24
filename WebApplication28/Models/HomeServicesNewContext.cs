@@ -256,7 +256,7 @@ namespace WebApplication28.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.UserImage).HasColumnType("image");
+                entity.Property(e => e.UserImage).HasMaxLength(500);
 
                 entity.HasOne(d => d.Login)
                     .WithMany(p => p.Users)

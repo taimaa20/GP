@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebApplication28.Models.Service>
+
+@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var countOFEmployees= ViewBag.countOFEmployees ;
+
+    var countOFUsers = ViewBag.countOFUsers; 
+       string[] TableHeaders = new string[]{"ServiceID" ,"ServiceName"
+          ,"Price"," CategoryId"," UserId","Description"
+     };
+
+}
+
+
+<div class="table">
+    <table class="table table-bordered table-hover" id="dataTable">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+                
+                 @if (Model != null)
+            {
+                foreach (var data in Model)
+             
+                {
+
+                    <tr>
+                        <td>@data.ServiceId </td>
+                        <td>@data.ServiceName </td>
+                        <td>@data.Price </td>
+
+                        <td>@data.CategoryId </td>
+                        <td>@data.UserId </td>
+                        <td>@data.Description</td>
+                 
+
+                       
+                    </tr>
+
+
+                }
+            }
+            }
+        </tbody>
+    </table>
+   
+</div>
