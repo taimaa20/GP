@@ -12,6 +12,32 @@ namespace WebApplication28.Controllers
             _context = context;
         }
         HomeServicesNewContext db = new HomeServicesNewContext();
+        public IActionResult AllUsers()
+        {
+            //FetchData();
+
+            
+            List<User> user = db.Users.ToList();
+           
+
+
+            return View(user.ToList());
+
+
+        }
+        public IActionResult services()
+        {
+            //FetchData();
+
+
+            List<Service> services = db.Services.ToList();
+
+
+
+            return View(services.ToList());
+
+
+        }
         public IActionResult Index()
 
         {
