@@ -11,8 +11,13 @@
      };
 
 }
+<form asp-action="servicesNameSearch" method="get" >
+        <label>startdate</label> <input type="text" name="sName" />
+      
 
-
+        <input type="submit" value="Submit" />
+        <button asp-action="servicesNameSearch" >get all </button>
+    </form>
 <div class="table">
     <table class="table table-bordered table-hover" id="dataTable">
         <thead>

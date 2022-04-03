@@ -1,0 +1,69 @@
+﻿@model IEnumerable<WebApplication28.Models.joins>
+
+@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+ 
+       string[] TableHeaders = new string[]{"PaymentId","PaymentType" ,"PaymentAmount","CardNumber","paymentDate","FirstName","LastName","PhoneNumber"
+     };
+
+}
+ 
+  <form asp-action="MonthlyPayments">
+        <label>startdate</label> <input type="month" name="startDate" />
+            <label>startdate</label> <input type="month" name="endDate" />
+
+        <input type="submit" value="Submit" />
+       
+        
+    </form>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                                            @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+                                        </tr>
+                                   
+                                    <tbody>
+                                       
+            @{
+                
+                 @if (Model != null)
+            {
+                foreach (var data in Model)
+             
+                {
+
+                    <tr>
+                        <td>@data.payment.PaymentId </td>
+                            <td>@data.payment.PaymentType </td>
+                      <td>@data.payment.PaymentAmount </td>
+                       <td>@data.payment.CardNumber </td>
+                           <td>@data.payment.paymentDate </td>
+                            <td>@data.users.FirstName </td>
+                      <td>@data.users.LastName </td>
+                       <td>@data.users.PhoneNumber </td>
+                    </tr>
+
+
+                }
+            }
+            }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                 
+
+              
+                <!-- /.container-fluid -->
+
+           

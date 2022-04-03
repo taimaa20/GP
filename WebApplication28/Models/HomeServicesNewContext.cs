@@ -152,6 +152,10 @@ namespace WebApplication28.Models
             {
                 entity.ToTable("Payment");
 
+                entity.Property(e => e.paymentDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("paymentDate");
+
                 entity.Property(e => e.CardNumber)
                     .HasMaxLength(50)
                     .IsUnicode(false);

@@ -7,12 +7,19 @@
 
     var countOFUsers = ViewBag.countOFUsers; 
        string[] TableHeaders = new string[]{"UserImage","FirstName","LastName","ServiceID" ,"ServiceName"
-          ,"Price"," CategoryId"," UserId","Description"
+          ,"Price"," CategoryId"," UserId","Description","Date","Status","UserServiceId"
      };
 
 }
 
+  <form asp-action="MonthelyUserServices">
+        <label>startdate</label> <input type="month" name="startDate" />
+            <label>startdate</label> <input type="month" name="endDate" />
 
+        <input type="submit" value="Submit" />
+       
+        
+    </form>
 <div class="table">
     <table class="table table-bordered table-hover" id="dataTable">
         <thead>
@@ -44,15 +51,13 @@
                         <td>@data.services.ServiceId </td>
                         <td>@data.services.ServiceName </td>
                         <td>@data.services.Price </td>
-
                         <td>@data.services.CategoryId </td>
                         <td>@data.services.UserId </td>
                         <td>@data.services.Description</td>
-                       
-                 
-                 
+                         <td>@data.userService.Date </td>
+                        <td>@data.userService.Status </td>
+                        <td>@data.userService.UserServiceId </td>
 
-                       
                     </tr>
 
 
