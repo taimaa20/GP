@@ -1,0 +1,68 @@
+﻿@model IEnumerable<WebApplication28.Models.joins>
+
+@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+   
+       string[] TableHeaders = new string[]{"UserID","UserImage" ,"Fname"
+          ,"Lname"," Gender"," Email","PhoneNumber","Adress","City","Birthdate","Username","roleid"
+     };
+
+}
+            <form asp-action="DisplayEmployee">
+        <label>startdate</label> <input type="text" name="EmName" />
+      
+
+        <input type="submit" value="Submit" />
+                <button asp-action="DisplayEmployee" >get all</button>
+                 </form>
+<div class="table">
+    <table class="table table-bordered table-hover" id="dataTable">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+                
+                 @if (Model != null)
+            {
+                foreach (var data in Model)
+             
+                {
+
+                    <tr>
+                        <td>@data.users.UserId </td>
+                        <td>@data.users.UserImage </td>
+                        <td>@data.users.FirstName </td>
+
+                        <td>@data.users.LastName </td>
+                        <td>@data.users.Gender </td>
+                        <td>@data.users.Email</td>
+                        <td>@data.users.PhoneNumber</td>
+                        <td>@data.users.Adress</td>
+                        <td>@data.users.City</td>
+                        <td>@data.users.BirthDate</td>
+                        <td>@data.logins.UserName</td>
+                        <td>@data.roles.RoleId</td>
+
+                       
+                    </tr>
+
+
+                }
+            }
+            }
+        </tbody>
+    </table>
+   
+</div>

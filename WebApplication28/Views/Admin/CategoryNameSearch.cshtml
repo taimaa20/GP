@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebApplication28.Models.Category>
+
+@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+ 
+       string[] TableHeaders = new string[]{"CategoryId","CategoryName" 
+     };
+
+}
+ 
+                        <form asp-action="CategoryNameSearch">
+        <label>startdate</label> <input type="text" name="CatName" />
+      
+
+        <input type="submit" value="Submit" />
+                <button asp-action="CategoryNameSearch" >get all</button>
+    </form>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                                            @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+                                        </tr>
+                                   
+                                    <tbody>
+                                       
+            @{
+                
+                 @if (Model != null)
+            {
+                foreach (var data in Model)
+             
+                {
+
+                    <tr>
+                        <td>@data.CategoryId </td>
+                        <td>@data.CategoryName </td>
+                 
+
+                       
+                    </tr>
+
+
+                }
+            }
+            }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                 
+
+              
+                <!-- /.container-fluid -->
+
+           

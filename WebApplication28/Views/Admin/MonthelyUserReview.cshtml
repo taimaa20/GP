@@ -6,12 +6,20 @@
     var countOFEmployees= ViewBag.countOFEmployees ;
 
     var countOFUsers = ViewBag.countOFUsers; 
-       string[] TableHeaders = new string[]{"UserImage","FirstName","LastName","ServiceID" ,"ServiceName"
-          ,"Price"," CategoryId"," UserId","Description"
+       string[] TableHeaders = new string[]{"UserImage","FirstName","LastName","UserServiceId" ,"ServiceId"," UserId"
+          ,"date"," Status","ReviewRange","ReviewText"
      };
 
 }
 
+  <form asp-action="MonthelyUserReview">
+        <label>startdate</label> <input type="month" name="startDate" />
+            <label>startdate</label> <input type="month" name="endDate" />
+
+        <input type="submit" value="Submit" />
+       
+        
+    </form>
 
 <div class="table">
     <table class="table table-bordered table-hover" id="dataTable">
@@ -41,18 +49,15 @@
                         <td>@data.users.UserImage </td>
                         <td>@data.users.FirstName </td>
                         <td>@data.users.LastName</td>
-                        <td>@data.services.ServiceId </td>
-                        <td>@data.services.ServiceName </td>
-                        <td>@data.services.Price </td>
-
-                        <td>@data.services.CategoryId </td>
-                        <td>@data.services.UserId </td>
-                        <td>@data.services.Description</td>
-                       
-                 
-                 
-
-                       
+                         <td>@data.userService.UserServiceId </td>
+                        <td>@data.userService.ServiceId </td>
+                          <td>@data.userService.ServiceId </td>
+                        <td>@data.userService.UserId </td>
+                         <td>@data.userService.Date </td>
+                        <td>@data.userService.Status </td>
+                           <td>@data.review.ReviewRange </td>
+                         <td>@data.review.ReviewText </td>
+                        
                     </tr>
 
 

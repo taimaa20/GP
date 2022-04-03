@@ -10,7 +10,7 @@ namespace WebApplication28.Models
         public double? PaymentAmount { get; set; }
         public string CardNumber { get; set; } = null!;
         public int UserId { get; set; }
-
+        public DateTime paymentDate { get; set; }
         public virtual User User { get; set; } = null!;
     }
 }
